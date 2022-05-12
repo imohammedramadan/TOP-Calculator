@@ -15,10 +15,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet" />
 
-  <title>Title</title>
+  <title>Calculator</title>
 </head>
 
 <body>
+  <main>
+    <div class="calculator-container">
+      <!-- <div class="display">6942321561614654156160</div> -->
+      <input type="text" class="display" value="" disabled="true">
+      <div class="input-buttons">
+        <!-- number buttons -->
+        <button class="number zero">0</button>
+        <button class="number one">1</button>
+        <button class="number two">2</button>
+        <button class="number three">3</button>
+        <button class="number four">4</button>
+        <button class="number five">5</button>
+        <button class="number six">6</button>
+        <button class="number seven">7</button>
+        <button class="number eight">8</button>
+        <button class="number nine">9</button>
+
+        <!-- operator buttons -->
+        <button class="operator add">+</button>
+        <button class="operator subtract">-</button>
+        <button class="operator multiply">*</button>
+        <button class="operator buttonide">/</button>
+
+        <!-- misc buttons -->
+        <button class="misc percent">%</button>
+        <button class="misc dot">.</button>
+        <button class="misc equal">=</button>
+
+        <!-- controllers -->
+        <button class="controller clear">C</button>
+        <button class="controller delete">Del</button>
+      </div>
+    </div>
+  </main>
   <script src="./app.js"></script>
 </body>
 
