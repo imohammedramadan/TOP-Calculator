@@ -27,7 +27,7 @@ function operate(operator, first, second) {
 		return +first + +second;
 	} else if (operator === "-") {
 		return +first - +second;
-	} else if (operator === "*") {
+	} else if (operator === "x") {
 		return +first * +second;
 	} else if (operator === "/") {
 		return +first / +second;

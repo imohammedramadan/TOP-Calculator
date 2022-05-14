@@ -50,17 +50,17 @@ img {
 /* css properties */
 /* main */
 main {
-	width: 100vw;
-	height: calc(100vh - 40px);
 	display: flex;
-	place-content: center;
-	place-items: center;
+	height: calc(100vh - 40px);
 }
 
 .calculator-container {
+	margin: auto;
+	max-width: 30rem;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 1rem;
+	padding: 20px;
 }
 
 .display {
@@ -69,30 +69,25 @@ main {
 	color: var(--font-color);
 	border: 4px solid var(--dark-color);
 	border-radius: 14px;
+	padding: 5px;
 }
 
 .answer-display {
-	width: 460px;
-	height: 80px;
 	background-color: var(--background);
 	color: var(--font-color);
 	border: none;
 	border-radius: 14px;
-	font-size: 50px;
-	padding: 0px 10px;
+	font-size: 48px;
 	white-space: nowrap;
 	overflow-x: hidden;
 }
 
 .equation-display {
-	width: 460px;
-	height: 40px;
 	color: var(--font-color);
 	background-color: var(--background);
 	border: none;
 	border-radius: 14px;
 	font-size: 24px;
-	padding: 20px 10px 0px 10px;
 	white-space: nowrap;
 	overflow-x: hidden;
 }
@@ -100,7 +95,9 @@ main {
 /* calculator buttons grid */
 .input-buttons {
 	display: grid;
-	gap: 20px;
+	gap: 1rem;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
 	grid-template-areas:
 		"clear delete negative divide"
 		"seven eight nine  multiply"
@@ -174,18 +171,14 @@ main {
 .misc,
 .controller {
 	cursor: pointer;
-	width: 100px;
-	padding: 22px;
 	background-color: var(--dark-color);
 	border: 4px solid var(--dark-color);
 	border-radius: 14px;
-	display: flex;
-	place-content: center;
-	place-items: center;
-	font-size: 40px;
 	transition: all 0.1s ease-in-out;
+	font-size: 48px;
 	color: var(--font-color);
 	font-family: inherit;
+	height: 6rem;
 }
 .number:hover,
 .operator:hover,
@@ -212,3 +205,15 @@ footer a:hover {
 	color: var(--medium-color);
 }
 /* footer */
+
+@media (max-width: 768px) {
+	main {
+		display: block;
+	}
+	.number,
+	.operator,
+	.misc,
+	.controller {
+		height: 5rem;
+	}
+}
