@@ -22,7 +22,10 @@
   <main>
     <div class="calculator-container">
       <!-- <div class="display">6942321561614654156160</div> -->
-      <input type="text" class="display" value="" disabled="true">
+      <div class="display">
+        <input type="text" class="equation-display" value="" disabled="true">
+        <input type="text" class="answer-display" value="" disabled="true">
+      </div>
       <div class="input-buttons">
         <!-- number buttons -->
         <button class="number zero">0</button>
@@ -45,6 +48,7 @@
         <!-- misc buttons -->
         <button class="misc percent">%</button>
         <button class="misc dot">.</button>
+        <button class="misc negative">-/+</button>
         <button class="misc equal">=</button>
 
         <!-- controllers -->
@@ -53,6 +57,9 @@
       </div>
     </div>
   </main>
+  <footer>
+    <a href="https://github.com/imohammedramadan" target="_blank">Mohammed Ramadan(github)</a>
+  </footer>
   <script src="./app.js"></script>
 </body>
 
