@@ -69,24 +69,22 @@ function clearReset() {
 		answerDisplay.value = ``;
 	}
 }
-
 // delete an item from the equation
 function deleteItem() {
 	if (valueBuffer) {
 		valueBuffer == "." ? (readyForFraction = true) : (readyForFraction = false);
 		valueBuffer = valueBuffer.slice(0, -1);
 		updateDisplay();
-	} else if (equationArray.length % 2 == 0 && equationArray.length > 0) {
-		console.log("yes");
+	} else if (equationArray.length > 0 && equationArray.length % 2 == 0) {
 		equationArray = equationArray.slice(0, -1);
 		readyForOperator = true;
-		console.log(equationArray);
 		updateDisplay();
+	} else if (equationArray.length == 0) {
+		valueBuffer = "";
 	} else {
 		valueBuffer = equationArray[equationArray.length - 1];
 		equationArray = equationArray.slice(0, -1);
 		valueBuffer = valueBuffer.slice(0, -1);
-		console.log(equationArray);
 		updateDisplay();
 	}
 }
