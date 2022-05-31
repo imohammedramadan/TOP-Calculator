@@ -7,6 +7,7 @@ let operator = "";
 let readyForOperator = false;
 let produceResult = false;
 let equationArray = [];
+let readyForFraction = true;
 
 // DOM elements
 const buttonsContainer = document.querySelector(".input-buttons");
@@ -55,6 +56,7 @@ function clearValues() {
 	readyForOperator = false;
 	produceResult = false;
 	equationArray = [];
+	readyForFraction = true;
 }
 
 // clear all displayed and/or stored values
@@ -71,6 +73,7 @@ function clearReset() {
 // delete an item from the equation
 function deleteItem() {
 	if (valueBuffer) {
+		valueBuffer == "." ? (readyForFraction = true) : (readyForFraction = false);
 		valueBuffer = valueBuffer.slice(0, -1);
 		updateDisplay();
 	} else if (equationArray.length % 2 == 0 && equationArray.length > 0) {
@@ -104,7 +107,11 @@ function getNumbers(numberBtn) {
 function getOperator(operatorBtn) {
 	operatorBtn.addEventListener("click", () => {
 		if (readyForOperator) {
+			readyForFraction = true;
 			if (valueBuffer) {
+				if (valueBuffer.slice(-1) == ".") {
+					valueBuffer = valueBuffer.slice(0, -1);
+				}
 				operator = operatorBtn.textContent;
 				equationArray.push(valueBuffer, operator);
 				valueBuffer = "";
@@ -182,8 +189,11 @@ negativeBtn.addEventListener("click", makeNegative);
 
 // add a decimal dot to the input
 dotBtn.addEventListener("click", () => {
-	valueBuffer += dotBtn.textContent;
-	updateDisplay();
+	if (readyForFraction) {
+		valueBuffer += dotBtn.textContent;
+		updateDisplay();
+		readyForFraction = false;
+	}
 });
 
 // calculate percentage
